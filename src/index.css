@@ -108,3 +108,16 @@ main {
 .carousel-inner {
   padding: 0 50px !important;
 }
+
+.move-left {
+  animation: slideLeft 5s linear infinite;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
