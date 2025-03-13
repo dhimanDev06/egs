@@ -112,6 +112,9 @@ main {
 .move-left {
   animation: slideLeft 5s linear infinite;
 }
+.h-200{
+  height: 200px;
+}
 
 @keyframes slideLeft {
   0% {
