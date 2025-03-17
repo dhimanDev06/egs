@@ -106,7 +106,9 @@ main {
   color: rgb(108, 154, 108);
 }
 .carousel-inner {
-  padding: 0 50px !important;
+  /* padding: 0 50px !important; */
+  /* display: flex;
+  justify-content: center; */
 }
 
 .move-left {
@@ -122,5 +124,48 @@ main {
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+/* For tablets (screen width between 768px and 1024px) */
+@media (min-width: 768px) {
+  .navbar-brand img{
+    width: 210px; 
+    height: 110px;
+  }
+  .carousel {
+    max-width: 100%;
+  }
+  
+  .carousel img {
+    height: 100%;
+  }
+
+  .banner-desc{
+    display: block;
+    
+  }
+
+}
+
+/* For mobile devices (screen width below 768px) */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 100%;
+  }
+  
+  .carousel img {
+    height: 200px;
+  }
+  .banner-title{
+    font-size: medium;
+  }
+  .banner-desc{
+    display: none;
+    /* font-size: small; */
+  }
+  .navbar-brand img{
+    width: 90px; 
+    height: 60px;
   }
 }

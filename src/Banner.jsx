@@ -6,41 +6,43 @@ import img3 from "./assets/banner_3.jpg"
 
 function Banner() {
   return (
-    <Carousel  style={{ backgroundColor: '#6c9a6c', width:"1200px",display:"contents" }}>
+    <div className="container mt-4">
+    <Carousel className="w-100">
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={img1}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className='banner-title'>Water feature- Lotus pond</h3>
+          <p className='banner-desc'>A water feature can add beauty, tranquility, and a sense of serenity to any garden or outdoor space. It’s beautifully designed water feature with a floating white lotus-like structure made of marble.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={img2}
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className='banner-title'>Feature wall</h3>
+          <p  className='banner-desc'>A feature wall for a garden can be a beautiful focal point that enhances the overall look of your outdoor space.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={img3}
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3 className='banner-title'>Pavillion garden area</h3>
+          <p  className='banner-desc'>A pavilion in a garden area is a wonderful way to create a serene and functional outdoor space, ideal for relaxing.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
   );
 }
 
