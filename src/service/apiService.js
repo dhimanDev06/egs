@@ -12,7 +12,8 @@ const egsClient = axios.create({
 
 // API service functions
 const ApiService = {
-  getBanner: () => egsClient.get("api.php?type=banner&status=active")
+  getBanner: () => egsClient.get("api.php?type=banner&status=active"),
+  getServices: () => egsClient.get("api.php?type=services&status=active")
 };
 
 export default ApiService;

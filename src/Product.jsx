@@ -1,9 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick"; // Import React Slick
-import img1 from "./assets/site_1.jpg";
-import img2 from "./assets/site_2.jpg";
-import img3 from "./assets/site_3.jpg";
-import img4 from "./assets/site_4.jpg";
+import ApiService from "./service/apiService";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 const Product = () => {
@@ -40,47 +37,32 @@ const Product = () => {
     ],
   };
 
-  const products = [
-    {
-      img: img1,
-      title: "Children Playground with Park",
-      description:
-        "This is a playground with various play structures, including swings, a climbing net, a tic-tac-toe board, and a small slide.",
-    },
-    {
-      img: img2,
-      title: "Sunken Seating with Vertical Sculpture",
-      description:
-        "A beautifully designed outdoor seating area featuring a vertical garden and metallic leaf-like sculpture.",
-    },
-    {
-      img: img3,
-      title: "Feature Wall with Lights",
-      description:
-        "A modern, geometric wall design illuminated by strategically placed lights, creating a striking diamond pattern.",
-    },
-    {
-      img: img4,
-      title: "Backyard Water Feature",
-      description:
-        "A sleek, rectangular granite fountain surrounded by a pond with aquatic plants like water lilies.",
-    }
-  ];
-
+  const [serviceList, setServiceList] = useState([]);
+  
+    useEffect(() => {
+      ApiService.getServices().then((res) => {
+        if (res.status === 200) {
+          setServiceList(res.data.data);
+          console.log(res.data.data)
+        }
+      }).catch((er) => {
+        console.log(er);
+      });
+    }, []);
   return (
     <div className="container-xxl my-5">
       <Slider {...settings}>
-        {products.map((product, index) => (
+        {serviceList.map((service, index) => (
           <div key={index} className="px-2">
             <img
               className="d-block product-image"
-              src={product.img}
-              alt={product.title}
+              src={'https://everestgreenscapegroup.com/backend/' +service.image_path}
+              alt={service.short_description}
             />
             <h3 className="h5 mt-2 text-center text-capitalize">
-              {product.title}
+              {service.short_description}
             </h3>
-            <p className="text-body-secondary text-center">{product.description}</p>
+            <p className="text-body-secondary text-center">{service.long_description}</p>
           </div>
         ))}
       </Slider>
