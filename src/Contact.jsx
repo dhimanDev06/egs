@@ -5,8 +5,11 @@ const Contact = () => {
       {/* Professional Description */}
       <div className="text-center bg-gradient p-4 rounded shadow mb-5">
         <h4 className="text-success fw-bold">
-          If you're looking for a professional way to invite clients to contact you for horticulture and exterior work:
+        Looking for professional services in exterior work and horticulture?
         </h4>
+        <p className="text-success fw-bold">
+        Contact Everest Greenscape Group today for reliable and high quality services 
+        </p>
         <p className="text-secondary">
           "Enhance your outdoor spaces with our expert horticulture and exterior design services. From lush landscaping and sustainable gardens to stunning exterior lighting and architectural features, we bring your vision to life. Contact us today to discuss your project and discover how we can transform your space!"
         </p>
